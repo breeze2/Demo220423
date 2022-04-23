@@ -34,6 +34,7 @@ function UserAvatar(props: IUserAvatarProps) {
       <Image
         style={styles.image}
         source={
+          /* istanbul ignore next */
           image ? {uri: image} : require('../../assets/images/default-user.png')
         }
       />

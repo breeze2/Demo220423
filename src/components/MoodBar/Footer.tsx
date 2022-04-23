@@ -25,13 +25,13 @@ const styles = StyleSheet.create({
 
 interface IFooterProps {
   day: number;
-  activated?: boolean;
-  last?: boolean;
+  activated: boolean;
+  last: boolean;
   width: number;
 }
 
 function Footer(props: IFooterProps) {
-  const {activated = false, day, last, width} = props;
+  const {activated, day, last, width} = props;
   const fontSize = width * 0.5;
   return (
     <ShadowView

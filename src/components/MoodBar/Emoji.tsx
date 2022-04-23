@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
 });
 
 interface IEmojiProps {
-  activated?: boolean;
-  score?: number;
+  activated: boolean;
   width: number;
+  score?: number;
 }
 
 function Emoji(props: IEmojiProps) {
-  const {activated = false, score, width} = props;
+  const {activated, score, width} = props;
   const scoreType = getScoreType(score);
   const EmojiSVG = moodEmojiSVG[scoreType];
   const bgColor = activated

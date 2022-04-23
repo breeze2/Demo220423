@@ -10,6 +10,8 @@ import Emoji from './Emoji';
 import Footer from './Footer';
 import Score from './Score';
 
+export const MOOD_BAR_TEST_ID = 'MOOD_BAR_TEST_ID';
+
 const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'column',
@@ -36,27 +38,19 @@ interface IMoodBarProps {
   day: number;
   width: number;
   score?: number;
-  last?: boolean;
-  activated?: boolean;
-  maxScore?: number;
-  maxHeight?: number;
+  last: boolean;
+  activated: boolean;
   onPress?: (day: number | undefined) => void;
 }
 
+const maxHeight = 300;
+const maxScore = 100;
+
 function MoodBar(props: IMoodBarProps) {
-  const {
-    index,
-    day,
-    score,
-    width,
-    activated = false,
-    last = false,
-    maxHeight = 300,
-    maxScore = 100,
-    onPress,
-  } = props;
+  const {index, day, score, width, activated, last, onPress} = props;
 
   const handlePress = () => {
+    /* istanbul ignore next */
     if (onPress) {
       onPress(score !== undefined ? day : undefined);
     }
@@ -87,7 +81,7 @@ function MoodBar(props: IMoodBarProps) {
 
   return (
     <TouchableWithoutFeedback onPress={handlePress}>
-      <View style={styles.wrapper}>
+      <View style={styles.wrapper} testID={MOOD_BAR_TEST_ID}>
         <View style={[styles.body, {width}]}>
           <Animated.View
             style={[

@@ -9,6 +9,9 @@ import {
   moodHighlightColors,
 } from './config';
 
+export const MOOD_BAR_HIGHLIGHT_BACKGROUND_TEST_ID =
+  'MOOD_BAR_HIGHLIGHT_BACKGROUND_TEST_ID';
+
 const styles = StyleSheet.create({
   wrapper: {
     position: 'absolute',
@@ -59,6 +62,7 @@ function Background(props: IBackgroundProps) {
               },
             ]}
             colors={hlColors}
+            testID={MOOD_BAR_HIGHLIGHT_BACKGROUND_TEST_ID}
           />
         </ShadowView>
       ) : (

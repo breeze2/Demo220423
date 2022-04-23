@@ -11,6 +11,8 @@ import MoodBar from '../MoodBar';
 import MoodScore from './MoodScore';
 import UserAvatar from './UserAvatar';
 
+export const WEEK_MOODS_TEST_ID = 'WEEK_MOODS_TEST_ID';
+
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
@@ -81,7 +83,7 @@ function WeekMoods() {
 
   return (
     <TouchableWithoutFeedback onPress={handlePress}>
-      <View style={styles.wrapper}>
+      <View style={styles.wrapper} testID={WEEK_MOODS_TEST_ID}>
         <View style={styles.avatar}>
           <UserAvatar name={user.name} image={user.avatar} />
         </View>
